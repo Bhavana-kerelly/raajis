@@ -1,0 +1,2016 @@
+/* ==========================================================================
+   RAAJI'S CRAFTED SNACKS — GIFTING INNER PAGE STYLES
+   Visual reference: Heirloom Telugu Craftsmanship & Luxury Corporate Gifting
+   Palette:
+     - Deep Maroon: #790D25 (Primary)
+     - Deep Maroon Dark: #5E091C
+     - Muted Gold: #C99A52 / #D4AF37
+     - Warm Ivory: #FFF7ED
+     - Cream Background: #FDF7EE / #FAF4EA / #FCEBDD
+     - Dark Espresso: #38251E
+     - Terracotta: #B96D45
+   ========================================================================== */
+
+:root {
+  --gifting-maroon: #790D25;
+  --gifting-maroon-dark: #58081A;
+  --gifting-maroon-hover: #8E112E;
+  --gifting-cream: #FAF4EA;
+  --gifting-cream-card: #FFFBF5;
+  --gifting-cream-soft: #F6EDE0;
+  --gifting-gold: #C99A52;
+  --gifting-gold-light: #DFB776;
+  --gifting-gold-border: rgba(201, 154, 82, 0.35);
+  --gifting-espresso: #38251E;
+  --gifting-espresso-muted: #6E5349;
+  --gifting-border-subtle: rgba(56, 37, 30, 0.12);
+  --gifting-shadow-sm: 0 4px 16px rgba(56, 37, 30, 0.05);
+  --gifting-shadow-md: 0 8px 24px rgba(56, 37, 30, 0.08);
+  --gifting-shadow-lg: 0 16px 36px rgba(121, 13, 37, 0.12);
+}
+
+.gifting-page {
+  background-color: var(--gifting-cream);
+  color: var(--gifting-espresso);
+  font-family: var(--font-body, 'Work Sans', sans-serif);
+  line-height: 1.6;
+  min-height: 100vh;
+  overflow-x: clip;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+/* Navbar on Corporate Gifting page sits at top, hero sits immediately down to it */
+.gifting-page .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: rgba(248, 241, 227, 0.98);
+  border-bottom: 1px solid rgba(199, 154, 59, 0.25);
+  box-shadow: 0 2px 14px rgba(56, 37, 30, 0.05);
+}
+
+#occasions-section,
+#milestones-section,
+#craft-section,
+#corporate-inquiry {
+  scroll-margin-top: 90px;
+}
+
+.gifting-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 1400px) {
+  .gifting-container {
+    max-width: 1320px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 1 — ANNOUNCEMENT BAR
+   -------------------------------------------------------------------------- */
+.gifting-announcement-bar {
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+  padding: 0.45rem 1rem;
+  border-bottom: 1px solid rgba(201, 154, 82, 0.25);
+  position: relative;
+  z-index: 100;
+}
+
+.gifting-announcement-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
+.announcement-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  flex: 1;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.announcement-divider {
+  opacity: 0.45;
+  color: var(--gifting-gold);
+}
+
+.announcement-link {
+  color: #FFFDF8;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--gifting-gold);
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.announcement-link:hover {
+  color: var(--gifting-gold);
+}
+
+@media (max-width: 768px) {
+  .gifting-announcement-inner {
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.72rem;
+  }
+  .announcement-center {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 2 — MAIN NAVIGATION (GIFTING SPECIFIC)
+   -------------------------------------------------------------------------- */
+.gifting-navbar {
+  background: #FFFBF5;
+  border-bottom: 1px solid rgba(201, 154, 82, 0.25);
+  position: sticky;
+  top: 0;
+  z-index: 90;
+  box-shadow: 0 2px 12px rgba(56, 37, 30, 0.04);
+  transition: all 0.3s ease;
+}
+
+.gifting-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 74px;
+}
+
+.gifting-logo-group {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+}
+
+.gifting-logo-mark {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.gifting-logo-text-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.gifting-brand-name {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gifting-maroon);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.gifting-brand-tagline {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-style: italic;
+  font-size: 0.8rem;
+  color: var(--gifting-gold);
+  margin-top: 1px;
+}
+
+.gifting-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gifting-nav-item {
+  position: relative;
+}
+
+.gifting-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--gifting-espresso);
+  text-decoration: none;
+  padding: 0.6rem 0;
+  transition: color 0.2s ease;
+  cursor: pointer;
+}
+
+.gifting-nav-link:hover,
+.gifting-nav-link.is-active {
+  color: var(--gifting-maroon);
+}
+
+.gifting-nav-link .nav-arrow {
+  font-size: 0.65rem;
+  opacity: 0.7;
+  transition: transform 0.25s ease;
+}
+
+.gifting-nav-item:hover .nav-arrow {
+  transform: rotate(180deg);
+}
+
+/* Nav Dropdown */
+.gifting-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(8px);
+  background: #FFFDF8;
+  min-width: 210px;
+  border: 1px solid var(--gifting-gold-border);
+  border-radius: 8px;
+  box-shadow: 0 10px 28px rgba(56, 37, 30, 0.1);
+  padding: 0.6rem 0;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.22s ease;
+  z-index: 100;
+}
+
+.gifting-nav-item:hover .gifting-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+.gifting-dropdown-item {
+  display: block;
+  padding: 0.55rem 1.15rem;
+  font-size: 0.85rem;
+  color: var(--gifting-espresso);
+  text-decoration: none;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.gifting-dropdown-item:hover {
+  background: var(--gifting-cream-soft);
+  color: var(--gifting-maroon);
+}
+
+.gifting-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+}
+
+.gifting-action-icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--gifting-espresso);
+  padding: 0.35rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.gifting-action-icon-btn:hover {
+  color: var(--gifting-maroon);
+  transform: translateY(-1px);
+}
+
+.cart-count-badge {
+  position: absolute;
+  top: -2px;
+  right: -5px;
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gifting-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.gifting-mobile-toggle span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--gifting-espresso);
+  transition: 0.25s;
+}
+
+@media (max-width: 1024px) {
+  .gifting-nav-links {
+    display: none;
+  }
+  .gifting-mobile-toggle {
+    display: flex;
+  }
+}
+
+/* Mobile Dropdown Drawer */
+.gifting-mobile-drawer {
+  background: #FFFDF8;
+  border-bottom: 1px solid var(--gifting-gold-border);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.gifting-mobile-nav-link {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--gifting-espresso);
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed rgba(56, 37, 30, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 3 — HERO SECTION (FULL BACKGROUND IMAGE LAYOUT)
+   Image file: /public/gifting/hero-bg.jpg
+   -------------------------------------------------------------------------- */
+.gifting-hero {
+  position: relative;
+  background-color: var(--gifting-cream);
+  background-image: 
+    linear-gradient(
+      90deg,
+      rgba(250, 244, 234, 0.98) 0%,
+      rgba(250, 244, 234, 0.95) 32%,
+      rgba(250, 244, 234, 0.45) 48%,
+      rgba(250, 244, 234, 0) 65%
+    ),
+    url('/gifting/hero-bg.jpg');
+  background-size: cover;
+  background-position: right center;
+  background-repeat: no-repeat;
+  padding: 3.5rem 0 3.25rem;
+  min-height: 550px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-bottom: 1px solid var(--gifting-gold-border);
+}
+
+.gifting-hero-container {
+  width: 100%;
+  padding-left: clamp(1.25rem, 4.5vw, 4rem);
+  padding-right: clamp(1rem, 3vw, 2.5rem);
+  margin: 0;
+}
+
+.gifting-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 480px;
+  position: relative;
+  z-index: 2;
+  margin-left: 0;
+  margin-right: auto;
+  text-align: left;
+}
+
+.gifting-eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(201, 154, 82, 0.16);
+  border: 1px solid rgba(201, 154, 82, 0.55);
+  color: var(--gifting-maroon);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.85rem;
+  border-radius: 50px;
+  margin-bottom: 0.85rem;
+}
+
+.gifting-hero-title {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--gifting-maroon);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.8rem;
+  text-align: left;
+}
+
+.gifting-hero-desc {
+  font-size: 0.92rem;
+  color: var(--gifting-espresso-muted);
+  line-height: 1.55;
+  margin-bottom: 1.35rem;
+  text-align: left;
+  max-width: 440px;
+}
+
+.gifting-hero-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.btn-gifting-primary {
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.72rem 1.45rem;
+  border-radius: 50px;
+  border: 1px solid var(--gifting-maroon);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 16px rgba(121, 13, 37, 0.22);
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.btn-gifting-primary:hover {
+  background: var(--gifting-maroon-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(121, 13, 37, 0.3);
+}
+
+.btn-gifting-secondary {
+  background: #FFFBF5;
+  color: var(--gifting-maroon);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.72rem 1.45rem;
+  border-radius: 50px;
+  border: 1px solid var(--gifting-gold);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 8px rgba(56, 37, 30, 0.04);
+  transition: all 0.22s ease;
+  cursor: pointer;
+}
+
+.btn-gifting-secondary:hover {
+  background: var(--gifting-cream-soft);
+  border-color: var(--gifting-maroon);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 968px) {
+  .gifting-hero {
+    background-image: 
+      linear-gradient(
+        180deg,
+        rgba(250, 244, 234, 0.94) 0%,
+        rgba(250, 244, 234, 0.88) 100%
+      ),
+      url('/gifting/hero-bg.jpg');
+    padding: 2.75rem 0 2.5rem;
+    min-height: 460px;
+  }
+  .gifting-hero-title {
+    font-size: 1.95rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 4 — BRAND BENEFITS STRIP (REBUILT TO EXACT REFERENCE)
+   -------------------------------------------------------------------------- */
+.gifting-benefits-strip {
+  padding: 0.75rem 0 3.25rem;
+}
+
+.benefits-box {
+  background: #FFFDF9;
+  border: 1px solid #EBD7C4;
+  border-radius: 20px;
+  padding: 0.85rem 1.6rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: stretch;
+  gap: 0;
+  box-shadow: 0 4px 20px -2px rgba(80, 40, 20, 0.04), 0 1px 3px rgba(0, 0, 0, 0.02);
+}
+
+.benefit-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 0.25rem 1.15rem;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.benefit-card:first-child {
+  padding-left: 0.2rem;
+}
+
+.benefit-card:last-child {
+  padding-right: 0.2rem;
+}
+
+.benefit-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 14%;
+  bottom: 14%;
+  width: 1px;
+  background: #EBD7C4;
+}
+
+.benefit-icon-wrap {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+}
+
+.benefit-icon-wrap svg {
+  display: block;
+  overflow: visible;
+}
+
+.benefit-text-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefit-title {
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #231B1B;
+  margin: 0 0 2px 0;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.benefit-desc {
+  font-family: var(--font-body, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: #77655B;
+  margin: 0;
+  line-height: 1.35;
+}
+
+@media (max-width: 1024px) {
+  .benefits-box {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.25rem;
+    gap: 1.25rem 0;
+  }
+  .benefit-card:not(:last-child)::after {
+    display: none;
+  }
+  .benefit-card {
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .benefits-box {
+    grid-template-columns: 1fr;
+    padding: 1.15rem 1rem;
+    gap: 0.9rem;
+    border-radius: 16px;
+  }
+  .benefit-card {
+    padding: 0.4rem 0.25rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   A GIFT FOR EVERY OCCASION (2-COLUMN HORIZONTAL SPLIT CARDS)
+   Layout matching reference: 2 cards per row, left product image, right content
+   with category badge, title, description, tag pills, and explore link.
+   -------------------------------------------------------------------------- */
+.gifting-occasions-section {
+  padding: 3rem 0 3.5rem;
+}
+
+.section-editorial-header {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 2.5rem;
+}
+
+.section-editorial-title {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--gifting-maroon);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.section-editorial-subtitle {
+  font-size: 0.95rem;
+  color: var(--gifting-espresso-muted);
+  line-height: 1.55;
+}
+
+.occasions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.75rem;
+}
+
+.occasion-card {
+  background: #FFFDF8;
+  border-radius: 20px;
+  border: 1px solid var(--gifting-gold-border);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  align-items: center;
+  transition: all 0.3s ease;
+  box-shadow: var(--gifting-shadow-sm);
+  text-decoration: none;
+  color: inherit;
+  padding: 1rem;
+}
+
+.occasion-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 32px rgba(121, 13, 37, 0.12);
+  border-color: var(--gifting-maroon);
+}
+
+.occasion-image-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 220px;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #EFE4D3;
+}
+
+.occasion-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.occasion-card:hover .occasion-img {
+  transform: scale(1.05);
+}
+
+.occasion-content {
+  padding: 1rem 1rem 1rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.occasion-badge {
+  background: rgba(201, 154, 82, 0.14);
+  color: var(--gifting-maroon);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.28rem 0.75rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid rgba(201, 154, 82, 0.3);
+}
+
+.occasion-badge-icon {
+  font-size: 0.8rem;
+}
+
+.occasion-title {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--gifting-maroon);
+  line-height: 1.2;
+  margin-bottom: 0.55rem;
+}
+
+.occasion-desc {
+  font-size: 0.86rem;
+  color: var(--gifting-espresso-muted);
+  line-height: 1.55;
+  margin-bottom: 1rem;
+}
+
+.occasion-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-bottom: 1.15rem;
+}
+
+.occasion-tag-pill {
+  background: #FFFBF5;
+  border: 1px solid rgba(56, 37, 30, 0.15);
+  border-radius: 50px;
+  font-size: 0.74rem;
+  padding: 0.25rem 0.75rem;
+  color: var(--gifting-espresso);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.occasion-card:hover .occasion-tag-pill {
+  border-color: rgba(121, 13, 37, 0.3);
+}
+
+.occasion-link-arrow {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--gifting-maroon);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: gap 0.2s ease;
+}
+
+.occasion-card:hover .occasion-link-arrow {
+  gap: 0.55rem;
+}
+
+@media (max-width: 1024px) {
+  .occasions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .occasion-card {
+    grid-template-columns: 1fr;
+    padding: 1.15rem;
+    gap: 1rem;
+  }
+  .occasion-image-box {
+    height: 190px;
+    min-height: 190px;
+  }
+  .occasion-content {
+    padding: 0.5rem 0.25rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   THOUGHTFUL GIFTING FOR EVERY BUSINESS MILESTONE (BENTO ASYMMETRIC GRID)
+   Background Image Cards matching Solara reference layout
+   -------------------------------------------------------------------------- */
+.gifting-milestones-section {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.milestones-title-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+  text-align: center;
+}
+
+.milestones-divider-line {
+  height: 1px;
+  background: rgba(201, 154, 82, 0.45);
+  flex: 1;
+  max-width: 160px;
+}
+
+.milestones-heading {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--gifting-maroon);
+}
+
+.milestones-bento-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 1.35rem;
+  align-items: stretch;
+}
+
+/* Base Full-Bleed Background Card */
+.bento-bg-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  border: 1px solid var(--gifting-gold-border);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--gifting-shadow-sm);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+}
+
+.bento-bg-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* 1. Left Large Feature Card */
+.bento-card-large {
+  min-height: 380px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 2.5rem 2.25rem;
+  background-position: left center;
+}
+
+.bento-card-large::before {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 8, 8, 0) 0%,
+    rgba(15, 8, 8, 0.12) 30%,
+    rgba(15, 8, 8, 0.55) 60%,
+    rgba(15, 8, 8, 0.8) 100%
+  );
+}
+
+.bento-content-large {
+  position: relative;
+  z-index: 2;
+  max-width: 290px;
+  text-align: left;
+}
+
+.bento-title-large {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.18;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+.bento-desc-large {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.55;
+  margin-bottom: 1.35rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+.bento-link {
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: #FBD59B;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  transition: all 0.2s ease;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+.bento-link:hover {
+  color: #FFFFFF;
+  gap: 0.55rem;
+}
+
+/* Right Column */
+.milestones-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+}
+
+/* 2. Top Wide Card */
+.bento-card-wide {
+  min-height: 175px;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1.5rem 2.25rem;
+  background-position: left center;
+  flex: 1;
+}
+
+.bento-card-wide::before {
+  background: linear-gradient(
+    90deg,
+    rgba(15, 8, 8, 0) 0%,
+    rgba(15, 8, 8, 0.15) 30%,
+    rgba(15, 8, 8, 0.58) 60%,
+    rgba(15, 8, 8, 0.82) 100%
+  );
+}
+
+.bento-content-wide {
+  position: relative;
+  z-index: 2;
+  max-width: 300px;
+  text-align: left;
+}
+
+.bento-title-wide {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.45rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+.bento-desc {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.5;
+  margin-bottom: 0.85rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+/* Bottom Row: 2 Compact Cards Side-by-Side */
+.bento-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.35rem;
+  flex: 1;
+}
+
+.bento-card-compact {
+  min-height: 180px;
+  align-items: flex-end;
+  padding: 1.45rem;
+  background-position: center top;
+}
+
+.bento-card-compact::before {
+  background: linear-gradient(
+    180deg,
+    rgba(15, 8, 8, 0) 0%,
+    rgba(15, 8, 8, 0.18) 30%,
+    rgba(15, 8, 8, 0.6) 65%,
+    rgba(15, 8, 8, 0.82) 100%
+  );
+}
+
+.bento-content-compact {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  text-align: left;
+}
+
+.bento-title-compact {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.2;
+  margin-bottom: 0.35rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 1px 3px rgba(0, 0, 0, 0.85);
+}
+
+.bento-desc-compact {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.45;
+  margin-bottom: 0.75rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.75);
+}
+
+/* Hover States */
+.bento-bg-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.28);
+  border-color: rgba(201, 154, 82, 0.7);
+}
+
+.bento-bg-card:hover .bento-link {
+  gap: 0.55rem;
+}
+
+@media (max-width: 1024px) {
+  .milestones-bento-layout {
+    grid-template-columns: 1fr;
+  }
+  .bento-card-large {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bento-bottom-row {
+    grid-template-columns: 1fr;
+  }
+  .bento-card-large,
+  .bento-card-wide,
+  .bento-card-compact {
+    min-height: 200px;
+    padding: 1.35rem;
+    align-items: flex-end;
+  }
+  .bento-card-large::before,
+  .bento-card-wide::before,
+  .bento-card-compact::before {
+    background: linear-gradient(
+      180deg,
+      rgba(15, 8, 8, 0.05) 0%,
+      rgba(15, 8, 8, 0.5) 45%,
+      rgba(15, 8, 8, 0.85) 100%
+    );
+  }
+  .bento-content-large,
+  .bento-content-wide {
+    max-width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 8 — YOUR BRAND, OUR CRAFT (6 DIFFERENTIATORS)
+   -------------------------------------------------------------------------- */
+.gifting-craft-section {
+  padding: 4.5rem 0 3.5rem;
+  background-color: var(--gifting-cream, #FAF4EA);
+}
+
+.craft-header-center {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 3rem;
+}
+
+.craft-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.craft-decorative-line {
+  height: 1px;
+  background: #C99A52;
+  flex: 1;
+  max-width: 140px;
+  opacity: 0.65;
+}
+
+.craft-main-heading {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: var(--gifting-maroon, #790D25);
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+.craft-subtitle {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: #6B4A3E;
+  line-height: 1.6;
+}
+
+/* 6-Column Row */
+.craft-differentiators-row {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  position: relative;
+  align-items: stretch;
+}
+
+.craft-diff-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 1.15rem;
+  position: relative;
+}
+
+/* Thin vertical separator between columns */
+.craft-diff-column:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: rgba(185, 109, 69, 0.22);
+}
+
+/* Subtle circular watercolor-glow background */
+.craft-icon-aura {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(254, 230, 212, 0.95) 0%, rgba(254, 240, 228, 0.5) 65%, transparent 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.35rem;
+  transition: transform 0.3s ease;
+}
+
+.craft-custom-icon {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+}
+
+.craft-fallback-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.craft-fallback-svg svg {
+  width: 64px;
+  height: 64px;
+}
+
+.craft-diff-column:hover .craft-icon-aura {
+  transform: scale(1.08) translateY(-2px);
+}
+
+.craft-diff-title {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--gifting-maroon, #790D25);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+  min-height: 2.3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.craft-diff-desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.82rem;
+  color: var(--gifting-espresso-muted, #5A3D31);
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 8B — HOW DOES IT WORK? (4 PASTEL PROCESS CARDS)
+   -------------------------------------------------------------------------- */
+.gifting-how-it-works-section {
+  padding: 1.5rem 0 4.5rem;
+  background-color: var(--gifting-cream, #FAF4EA);
+}
+
+.how-it-works-card-container {
+  background: #FFF4EB;
+  border: 1px solid rgba(220, 180, 150, 0.35);
+  border-radius: 24px;
+  padding: 3.5rem 2.5rem;
+  box-shadow: 0 4px 24px rgba(74, 42, 29, 0.03);
+}
+
+.how-works-header-center {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 3rem;
+}
+
+.how-works-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.how-works-decorative-line {
+  height: 1px;
+  background: #C99A52;
+  flex: 1;
+  max-width: 140px;
+  opacity: 0.65;
+}
+
+.how-works-heading {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 2.35rem;
+  font-weight: 700;
+  color: var(--gifting-maroon, #790D25);
+  letter-spacing: -0.015em;
+  white-space: nowrap;
+}
+
+.how-works-subtitle {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-style: italic;
+  font-size: 0.98rem;
+  color: var(--gifting-maroon, #790D25);
+  opacity: 0.88;
+}
+
+/* 4 Cards Grid */
+.how-works-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.4rem;
+}
+
+.how-works-step-card {
+  border-radius: 18px;
+  border: 1px solid;
+  padding: 1.85rem 1.65rem;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(56, 37, 30, 0.02);
+}
+
+.how-works-step-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(56, 37, 30, 0.08);
+}
+
+.step-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.step-icon-circle {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.step-custom-icon {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+.step-fallback-svg {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-fallback-svg svg {
+  width: 42px;
+  height: 42px;
+}
+
+.how-works-step-card:hover .step-icon-circle {
+  transform: scale(1.08);
+}
+
+.step-number-watermark {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 2.85rem;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  user-select: none;
+}
+
+.step-card-title {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #2A1B16;
+  margin: 0 0 0.65rem;
+  line-height: 1.25;
+}
+
+.step-card-desc {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.86rem;
+  color: #5C4033;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Responsive for both sections */
+@media (max-width: 1100px) {
+  .craft-differentiators-row {
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 2.5rem;
+  }
+  .craft-diff-column:nth-child(3n)::after {
+    display: none;
+  }
+  .craft-diff-column:not(:nth-child(3n))::after {
+    display: block;
+  }
+  .how-works-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .craft-main-heading,
+  .how-works-heading {
+    font-size: 1.85rem;
+    white-space: normal;
+  }
+  .craft-decorative-line,
+  .how-works-decorative-line {
+    max-width: 40px;
+  }
+  .how-it-works-card-container {
+    padding: 2.25rem 1.25rem;
+    border-radius: 18px;
+  }
+  .craft-differentiators-row {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 2rem;
+  }
+  .craft-diff-column::after {
+    display: none !important;
+  }
+  .how-works-cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .craft-differentiators-row {
+    grid-template-columns: 1fr;
+    row-gap: 1.75rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 9 — TRUSTED BY LEADING BRANDS
+   Exact match to reference: clean #EFF1F3 container with 6 muted grey logos
+   -------------------------------------------------------------------------- */
+.gifting-trusted-section {
+  padding: 1.5rem 0 3.5rem;
+  background-color: var(--gifting-cream, #FAF4EA);
+}
+
+.trusted-brands-strip-box {
+  background: #EFF1F3;
+  border-radius: 12px;
+  padding: 2.25rem 3.5rem 2.5rem;
+  text-align: center;
+}
+
+.trusted-leading-eyebrow {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #64748B;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 2rem;
+  line-height: 1;
+}
+
+.trusted-brands-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.brand-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.82;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  user-select: none;
+}
+
+.brand-item:hover {
+  opacity: 1;
+  transform: translateY(-2px);
+}
+
+/* 1. Microsoft */
+.brand-microsoft {
+  gap: 0.55rem;
+}
+
+.brand-text-microsoft {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #737373;
+  letter-spacing: -0.015em;
+}
+
+/* 2. Goldman Sachs */
+.brand-text-goldman {
+  font-family: 'Times New Roman', Times, Georgia, serif;
+  font-size: 1.32rem;
+  font-weight: 700;
+  color: #737373;
+  letter-spacing: -0.02em;
+}
+
+/* 3. Amazon */
+.brand-amazon {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 2px;
+}
+
+.brand-text-amazon {
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #737373;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.amazon-smile-svg {
+  margin-top: -3px;
+}
+
+/* 4. SAP */
+.brand-text-sap {
+  font-family: 'Arial Black', -apple-system, sans-serif;
+  font-size: 1.42rem;
+  font-weight: 900;
+  color: #737373;
+  letter-spacing: 0.04em;
+}
+
+/* 5. Shell */
+.brand-text-shell {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #737373;
+  letter-spacing: -0.01em;
+}
+
+/* 6. WIPRO */
+.brand-text-wipro {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.32rem;
+  font-weight: 800;
+  color: #737373;
+  letter-spacing: 0.12em;
+}
+
+@media (max-width: 992px) {
+  .trusted-brands-strip-box {
+    padding: 2rem 1.5rem;
+  }
+  .trusted-brands-row {
+    justify-content: center;
+    gap: 2rem 3rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .trusted-leading-eyebrow {
+    font-size: 0.76rem;
+    letter-spacing: 0.14em;
+    margin-bottom: 1.5rem;
+  }
+  .trusted-brands-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem 1rem;
+    justify-items: center;
+  }
+  .brand-text-microsoft,
+  .brand-text-goldman,
+  .brand-text-amazon,
+  .brand-text-sap,
+  .brand-text-shell,
+  .brand-text-wipro {
+    font-size: 1.15rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 10 — CORPORATE INQUIRY FORM (2-COLUMN)
+   -------------------------------------------------------------------------- */
+.gifting-inquiry-section {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.inquiry-split-card {
+  display: grid;
+  grid-template-columns: 1fr 1.65fr;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--gifting-shadow-lg);
+  border: 1px solid var(--gifting-gold-border);
+}
+
+/* Left Maroon Panel */
+.inquiry-left-panel {
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+  padding: 3rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.inquiry-left-heading {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  line-height: 1.18;
+  margin-bottom: 1.15rem;
+  position: relative;
+  z-index: 2;
+}
+
+.inquiry-left-desc {
+  font-size: 0.92rem;
+  color: #F8E8D5;
+  line-height: 1.6;
+  margin-bottom: 2.2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.inquiry-quick-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  position: relative;
+  z-index: 2;
+}
+
+.btn-contact-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 0.8rem 1.35rem;
+  border-radius: 50px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-contact-whatsapp:hover {
+  background: #20BA5A;
+  transform: translateY(-2px);
+}
+
+/* Right Form Panel */
+.inquiry-right-panel {
+  background: #FFFBF5;
+  padding: 2.85rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.corporate-form-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.15rem;
+  margin-bottom: 1.15rem;
+}
+
+.form-full-width {
+  grid-column: 1 / -1;
+}
+
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--gifting-espresso);
+}
+
+.form-field-label .required-star {
+  color: var(--gifting-maroon);
+  margin-left: 2px;
+}
+
+.form-input-control {
+  background: #FFFDF8;
+  border: 1px solid rgba(56, 37, 30, 0.2);
+  border-radius: 8px;
+  padding: 0.65rem 0.85rem;
+  font-size: 0.84rem;
+  color: var(--gifting-espresso);
+  font-family: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+}
+
+.form-input-control:focus {
+  outline: none;
+  border-color: var(--gifting-maroon);
+  box-shadow: 0 0 0 3px rgba(121, 13, 37, 0.12);
+}
+
+.form-textarea-control {
+  min-height: 75px;
+  resize: vertical;
+}
+
+.form-submit-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.5rem;
+}
+
+.btn-form-submit {
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+  border: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 0.85rem 2.2rem;
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 4px 16px rgba(121, 13, 37, 0.25);
+  transition: all 0.22s ease;
+}
+
+.btn-form-submit:hover {
+  background: var(--gifting-maroon-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(121, 13, 37, 0.35);
+}
+
+.form-success-banner {
+  background: #E8F5E9;
+  border: 1px solid #A5D6A7;
+  color: #1B5E20;
+  padding: 1.5rem;
+  border-radius: 10px;
+  text-align: center;
+}
+
+@media (max-width: 968px) {
+  .inquiry-split-card {
+    grid-template-columns: 1fr;
+  }
+  .inquiry-left-panel {
+    padding: 2.25rem 1.75rem;
+  }
+  .inquiry-right-panel {
+    padding: 2.25rem 1.75rem;
+  }
+  .corporate-form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 11 — CORPORATE GIFTING FAQS (2 COLUMNS)
+   -------------------------------------------------------------------------- */
+.gifting-faq-section {
+  padding: 2.5rem 0 3.5rem;
+}
+
+.faq-title-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  margin-bottom: 2.25rem;
+  text-align: center;
+}
+
+.faq-heading {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 1.95rem;
+  font-weight: 700;
+  color: var(--gifting-maroon);
+}
+
+.faq-twocol-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.faq-accordion-item {
+  background: #FFFBF5;
+  border: 1px solid var(--gifting-gold-border);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.faq-accordion-item.is-expanded {
+  border-color: var(--gifting-maroon);
+  box-shadow: 0 4px 14px rgba(121, 13, 37, 0.08);
+}
+
+.faq-header-btn {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 1.05rem 1.25rem;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.faq-question-text {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--gifting-espresso);
+  line-height: 1.35;
+}
+
+.faq-toggle-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(201, 154, 82, 0.15);
+  color: var(--gifting-maroon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.faq-accordion-item.is-expanded .faq-toggle-icon {
+  transform: rotate(45deg);
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+}
+
+.faq-answer-body {
+  padding: 0 1.25rem 1.15rem;
+  font-size: 0.84rem;
+  color: var(--gifting-espresso-muted);
+  line-height: 1.6;
+  border-top: 1px dashed rgba(56, 37, 30, 0.08);
+  padding-top: 0.85rem;
+}
+
+@media (max-width: 860px) {
+  .faq-twocol-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 12 — FINAL CTA BANNER
+   -------------------------------------------------------------------------- */
+.gifting-final-banner-section {
+  padding: 1.5rem 0 3.5rem;
+}
+
+.final-banner-box {
+  background: #F8EDE0;
+  border: 1px solid var(--gifting-gold-border);
+  border-radius: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 0.9fr 1.6fr;
+  align-items: center;
+  box-shadow: var(--gifting-shadow-md);
+}
+
+.final-banner-img-wrap {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+  background: #E8D9C5;
+}
+
+.final-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.final-banner-content {
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.final-banner-title {
+  font-family: var(--font-display, 'Fraunces', serif);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--gifting-maroon);
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.final-banner-desc {
+  font-size: 0.95rem;
+  color: var(--gifting-espresso-muted);
+  line-height: 1.55;
+  margin-bottom: 1.65rem;
+  max-width: 580px;
+}
+
+.final-banner-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.btn-banner-maroon {
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.75rem 1.45rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.22s ease;
+  box-shadow: 0 4px 12px rgba(121, 13, 37, 0.2);
+}
+
+.btn-banner-maroon:hover {
+  background: var(--gifting-maroon-hover);
+  transform: translateY(-2px);
+}
+
+.btn-banner-outline {
+  background: #FFFDF8;
+  color: var(--gifting-maroon);
+  border: 1px solid var(--gifting-gold);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.75rem 1.45rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.22s ease;
+}
+
+.btn-banner-outline:hover {
+  background: var(--gifting-cream-soft);
+  border-color: var(--gifting-maroon);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 900px) {
+  .final-banner-box {
+    grid-template-columns: 1fr;
+  }
+  .final-banner-img-wrap {
+    height: 180px;
+  }
+  .final-banner-content {
+    padding: 1.75rem 1.5rem;
+  }
+  .final-banner-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   SECTION 13 — HERITAGE FOOTER (MINIMAL CENTERED)
+   -------------------------------------------------------------------------- */
+.gifting-footer {
+  background: var(--gifting-maroon);
+  color: #FFFDF8;
+  padding: 1.15rem 1.5rem 1rem;
+  border-top: 2px solid var(--gifting-gold);
+  text-align: center;
+}
+
+.footer-centered-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.footer-brand-centered {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.footer-logo-img {
+  height: 62px;
+  width: auto;
+  max-width: 240px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.45));
+  transition: transform 0.25s ease;
+  margin: 0;
+}
+
+.footer-brand-centered:hover .footer-logo-img {
+  transform: scale(1.05);
+}
+
+@media (max-width: 640px) {
+  .gifting-footer {
+    padding: 0.95rem 1rem 0.85rem;
+  }
+  .footer-logo-img {
+    height: 50px;
+    max-width: 190px;
+  }
+  .footer-brand-centered:hover .footer-logo-img {
+    transform: scale(1.05);
+  }
+}
+
+.footer-copyright-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 0.85rem;
+  color: rgba(248, 232, 213, 0.78);
+  margin: 0;
+  letter-spacing: 0.01em;
+}
+

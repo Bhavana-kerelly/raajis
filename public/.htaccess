@@ -1,0 +1,39 @@
+# Disable caching for index.html so browsers always fetch the latest JS/CSS bundles
+<IfModule mod_headers.c>
+  <Files "index.html">
+    FileETag None
+    Header unset ETag
+    Header set Cache-Control "max-age=0, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+  </Files>
+
+  # Cache hashed static assets aggressively
+  <FilesMatch "\.(js|css|webp|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot)$">
+    Header set Cache-Control "max-age=31536000, public, immutable"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Instantly redirect /admin directly to login screen
+  RewriteRule ^admin/?$ /raji-backend/public/index.php/admin/login [R=302,L]
+  RewriteRule ^admin/(.*)$ /raji-backend/public/index.php/admin/$1 [R=302,L]
+
+  # Allow the Laravel backend to handle its own routing
+  RewriteCond %{REQUEST_URI} ^/raji-backend [NC]
+  RewriteRule ^ - [L]
+
+  # Return a real 404 for missing static files instead of serving index.html
+  RewriteCond %{REQUEST_URI} \.(js|css|png|jpg|jpeg|gif|svg|ico|webp|woff|woff2|ttf|eot|mp4|json)$ [NC]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule .* - [R=404,L]
+
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>
+

@@ -1,0 +1,42 @@
+.hero-fallback {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.hero-fallback-ring {
+  width: min(78vw, 420px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    from 0deg,
+    var(--gold) 0deg,
+    var(--terracotta) 90deg,
+    var(--gold) 180deg,
+    var(--terracotta-deep) 270deg,
+    var(--gold) 360deg
+  );
+  -webkit-mask: radial-gradient(circle, transparent 58%, black 60%, black 78%, transparent 80%);
+  mask: radial-gradient(circle, transparent 58%, black 60%, black 78%, transparent 80%);
+  animation: heroSpin 22s linear infinite;
+  opacity: 0.85;
+}
+
+.hero-fallback-ring--inner {
+  position: absolute;
+  width: min(52vw, 280px);
+  animation-duration: 16s;
+  animation-direction: reverse;
+  opacity: 0.6;
+}
+
+@keyframes heroSpin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-fallback-ring { animation: none; }
+}

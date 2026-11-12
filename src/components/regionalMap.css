@@ -1,0 +1,275 @@
+/* ==========================================================================
+   RAAJI'S CRAFTED SNACKS - TELUGU REGIONS MAP SECTION (CLEAN IMAGE MODE)
+   ========================================================================== */
+
+.regional-section {
+  position: relative;
+  background-color: #F8F1E3;
+  color: #4A2A1D;
+  padding: 6rem 0 7rem;
+  overflow: hidden;
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.regional-container {
+  position: relative;
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 4vw;
+  z-index: 2;
+}
+
+/* Header Section */
+.regional-header {
+  max-width: 680px;
+  margin-bottom: 3.5rem;
+}
+
+.regional-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #A8322D;
+  margin-bottom: 0.6rem;
+}
+
+.regional-heading {
+  font-family: var(--font-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: #4A2A1D;
+  line-height: 1.18;
+  margin: 0;
+}
+
+/* Grid Layout: Left Map + Right Info Panel */
+.regional-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+/* LEFT: Map Canvas Wrapper */
+.map-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 253, 248, 0.75);
+  border: 1px solid rgba(199, 154, 59, 0.3);
+  border-radius: 24px;
+  padding: 2.2rem 1.8rem;
+  box-shadow: 0 16px 36px rgba(74, 42, 29, 0.05);
+}
+
+.map-image-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.custom-telugu-map-img {
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 12px;
+  filter: drop-shadow(0 6px 16px rgba(74, 42, 29, 0.06));
+}
+
+/* Interaction Pill Buttons below map */
+.map-region-buttons {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.region-tab-btn {
+  background: #FFFDF8;
+  border: 1px solid #C79A3B;
+  color: #4A2A1D;
+  padding: 0.6rem 1.3rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 6px rgba(74, 42, 29, 0.05);
+}
+
+.region-tab-btn:hover {
+  border-color: #A8322D;
+  color: #A8322D;
+  transform: translateY(-1px);
+}
+
+/* Selected Pill Button: Red/Terracotta Background with White Text */
+.region-tab-btn.is-active {
+  background: #A8322D;
+  border-color: #A8322D;
+  color: #FFFFFF;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(168, 50, 45, 0.3);
+}
+
+/* RIGHT: Selected Region Info Panel */
+.regional-panel-wrapper {
+  position: relative;
+}
+
+.regional-info-card {
+  background: #FFFDF8;
+  border: 1px solid rgba(199, 154, 59, 0.35);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 16px 40px rgba(74, 42, 29, 0.06);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.card-region-tag {
+  background: #A8322D;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  padding: 0.3rem 0.85rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+
+.card-region-title {
+  font-family: var(--font-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 2.6rem);
+  font-weight: 700;
+  color: #4A2A1D;
+  margin: 0 0 1rem 0;
+}
+
+/* Snack List Grid */
+.card-snack-list {
+  margin-bottom: 2rem;
+  border-top: 1px dashed rgba(199, 154, 59, 0.35);
+  padding-top: 1.5rem;
+}
+
+.snack-list-label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #A8322D;
+  margin-bottom: 1rem;
+}
+
+.snack-items-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.snack-item-chip {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #FDF8F0;
+  border: 1px solid rgba(199, 154, 59, 0.25);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.snack-item-chip:hover {
+  transform: translateX(4px);
+  border-color: rgba(168, 50, 45, 0.4);
+}
+
+.snack-thumb-wrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #FFFDF8;
+  border: 1px solid rgba(199, 154, 59, 0.3);
+  flex-shrink: 0;
+}
+
+.snack-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.snack-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.snack-item-name {
+  font-family: var(--font-display, serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #4A2A1D;
+}
+
+.snack-item-desc {
+  font-size: 0.82rem;
+  color: #6E4532;
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Explore Flavours Button */
+.explore-flavours-btn {
+  background: #4A2A1D;
+  color: #FFFDF8;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(74, 42, 29, 0.18);
+}
+
+.explore-flavours-btn:hover {
+  background: #A8322D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(168, 50, 45, 0.3);
+}
+
+.explore-flavours-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive Styles */
+@media (max-width: 900px) {
+  .regional-content-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .regional-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .regional-info-card {
+    padding: 1.8rem 1.4rem;
+  }
+}

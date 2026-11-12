@@ -1,0 +1,370 @@
+/* ==========================================================================
+   RAAJI'S CRAFTED SNACKS - PREMIUM INTERACTIVE PRODUCT SHELF
+   ========================================================================== */
+
+.product-shelf-section {
+  position: relative;
+  background-color: #F8F1E3;
+  color: #4A2A1D;
+  padding: 6rem 0 7rem;
+  overflow: hidden;
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+.shelf-bg-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(200, 154, 59, 0.08) 0%, transparent 60%),
+              radial-gradient(circle at 80% 70%, rgba(168, 50, 45, 0.05) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* Decorative Traditional Indian Line Art Motif */
+.shelf-decorative-motif {
+  position: absolute;
+  top: 2.5rem;
+  right: 5vw;
+  width: 140px;
+  height: 140px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.motif-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.shelf-container {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 4vw;
+  z-index: 2;
+}
+
+/* Header Section */
+.shelf-header {
+  max-width: 580px;
+  margin-bottom: 3rem;
+}
+
+.shelf-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #A8322D;
+  margin-bottom: 0.6rem;
+}
+
+.shelf-heading {
+  font-family: var(--font-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 700;
+  color: #4A2A1D;
+  line-height: 1.15;
+  margin: 0 0 1rem 0;
+}
+
+.shelf-subtext {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #6E4532;
+  margin: 0;
+}
+
+/* Interactive Draggable Shelf Viewport */
+.shelf-viewport {
+  position: relative;
+  padding: 2.5rem 0 1.5rem;
+  margin-bottom: 2rem;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.shelf-viewport:active {
+  cursor: grabbing;
+}
+
+.shelf-track {
+  display: flex;
+  gap: 3.2rem;
+  padding: 1rem 2rem 2.5rem 2rem;
+  width: max-content;
+  align-items: flex-end;
+}
+
+/* Individual Product Jar Item */
+.jar-wrapper {
+  position: relative;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  flex: 0 0 auto;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+  transform-origin: bottom center;
+}
+
+.jar-wrapper:focus-visible {
+  outline: 2px solid #A8322D;
+  outline-offset: 8px;
+  border-radius: 16px;
+}
+
+/* Hover & Selected States */
+.jar-wrapper:hover {
+  transform: translateY(-10px);
+}
+
+.jar-wrapper.is-selected {
+  transform: translateY(-20px);
+  z-index: 10;
+}
+
+/* Clean Large Single Jar Container */
+.clean-jar-container {
+  position: relative;
+  width: 200px;
+  height: 270px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: transparent;
+}
+
+.clean-jar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 22px rgba(74, 42, 29, 0.25));
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), filter 0.35s ease;
+}
+
+.jar-wrapper:hover .clean-jar-img {
+  transform: scale(1.06);
+  filter: drop-shadow(0 20px 30px rgba(74, 42, 29, 0.35));
+}
+
+.jar-wrapper.is-selected .clean-jar-img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 26px 36px rgba(168, 50, 45, 0.38));
+}
+
+/* Jar Bottom Shadow on Wooden Shelf */
+.jar-base-shadow {
+  position: absolute;
+  bottom: -6px;
+  width: 75%;
+  height: 14px;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.4) 0%, transparent 75%);
+  z-index: -1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.jar-wrapper.is-selected .jar-base-shadow {
+  opacity: 0.7;
+  transform: translateY(14px) scale(1.2);
+}
+
+.jar-selected-glow {
+  position: absolute;
+  inset: -14px;
+  border-radius: 32px;
+  background: radial-gradient(circle at 50% 50%, rgba(200, 154, 59, 0.35) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -2;
+  animation: pulseGlow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes pulseGlow {
+  0% { opacity: 0.6; transform: scale(0.98); }
+  100% { opacity: 1; transform: scale(1.04); }
+}
+
+/* 3D Wooden Shelf Board Construction */
+.wooden-shelf-board {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 28px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wood-top-surface {
+  height: 8px;
+  background: linear-gradient(90deg, #A86D3B 0%, #C48750 30%, #A86D3B 70%, #8A5226 100%);
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.4), 0 -2px 8px rgba(74, 42, 29, 0.2);
+}
+
+.wood-front-bevel {
+  height: 16px;
+  background: linear-gradient(180deg, #7A4A27 0%, #5E371C 60%, #422511 100%);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.15);
+}
+
+.wood-bottom-shadow {
+  height: 4px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, transparent 100%);
+}
+
+/* Controls Bar (Arrows & Drag Hint) */
+.shelf-controls-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.shelf-nav-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #FFFDF8;
+  border: 1.5px solid #C79A3B;
+  color: #4A2A1D;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(74, 42, 29, 0.08);
+  transition: all 0.25s ease;
+}
+
+.shelf-nav-btn:hover {
+  background: #A8322D;
+  border-color: #A8322D;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(168, 50, 45, 0.25);
+}
+
+.drag-cue-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #6E4532;
+}
+
+/* Selected Product Information Card Area */
+.selected-product-info-panel {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.info-card-content {
+  background: #FFFDF8;
+  border: 1px solid rgba(199, 154, 59, 0.35);
+  border-radius: 20px;
+  padding: 2.2rem 2.8rem;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(74, 42, 29, 0.06);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.info-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+}
+
+.info-region-badge {
+  background: #A8322D;
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  padding: 0.3rem 0.8rem;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+
+.info-type-tag {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #C79A3B;
+}
+
+.info-product-title {
+  font-family: var(--font-display, 'Playfair Display', Georgia, serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  font-weight: 700;
+  color: #4A2A1D;
+  margin: 0 0 0.8rem 0;
+}
+
+.info-product-desc {
+  font-size: 1.02rem;
+  line-height: 1.6;
+  color: #5C3928;
+  max-width: 500px;
+  margin: 0 auto 1.8rem auto;
+}
+
+.discover-snack-btn {
+  background: #4A2A1D;
+  color: #FFFDF8;
+  border: none;
+  padding: 0.9rem 2.2rem;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(74, 42, 29, 0.2);
+}
+
+.discover-snack-btn:hover {
+  background: #A8322D;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(168, 50, 45, 0.3);
+}
+
+.btn-arrow {
+  transition: transform 0.3s ease;
+}
+
+.discover-snack-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .product-shelf-section {
+    padding: 4.5rem 0 5rem;
+  }
+
+  .shelf-header {
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  .clean-jar-container {
+    width: 160px;
+    height: 220px;
+  }
+
+  .shelf-track {
+    gap: 2rem;
+  }
+
+  .info-card-content {
+    padding: 1.8rem 1.4rem;
+  }
+}

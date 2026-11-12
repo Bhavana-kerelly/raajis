@@ -1,0 +1,310 @@
+/* Warm Cream / Editorial Recipe Book Styling */
+.story-section {
+  position: relative;
+  background-color: #fdf8f0;
+  color: #4a2511;
+  padding: 5rem 1.5rem 4rem 1.5rem;
+  overflow: hidden;
+  font-family: var(--font-body, 'Inter', sans-serif);
+}
+
+/* Subtle paper texture */
+.story-bg-texture {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(185, 70, 48, 0.03) 1px, transparent 0);
+  background-size: 24px 24px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Side village landscape illustrations */
+.story-scenery-left,
+.story-scenery-right {
+  position: absolute;
+  top: 4%;
+  width: 280px;
+  opacity: 0.18;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.story-scenery-left {
+  left: -40px;
+}
+
+.story-scenery-right {
+  right: -40px;
+  transform: scaleX(-1);
+}
+
+.story-scenery-left img,
+.story-scenery-right img {
+  width: 100%;
+  height: auto;
+}
+
+.story-container {
+  position: relative;
+  max-width: 1240px;
+  margin: 0 auto;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header Section */
+.story-header {
+  text-align: center;
+  max-width: 720px;
+  margin-bottom: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.story-logo-wrap {
+  margin-bottom: 1rem;
+}
+
+.story-brand-logo {
+  max-height: 70px;
+  width: auto;
+  object-fit: contain;
+}
+
+.story-brand-logo-fallback {
+  border: 2px solid #b94630;
+  padding: 0.4rem 1.2rem;
+  border-radius: 12px;
+  background: #fffdf9;
+  box-shadow: 0 4px 12px rgba(185, 70, 48, 0.12);
+}
+
+.story-brand-logo-fallback .fallback-title {
+  display: block;
+  font-family: var(--font-heading, serif);
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #b94630;
+  letter-spacing: 1px;
+}
+
+.story-brand-logo-fallback .fallback-sub {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #c9973b;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.story-eyebrow {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  color: #c9973b;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.story-heading {
+  font-family: var(--font-heading, 'Playfair Display', Georgia, serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  color: #4a2511;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.highlight-red {
+  color: #b94630;
+}
+
+.story-subtitle {
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: #6e4027;
+  line-height: 1.6;
+  max-width: 540px;
+  margin: 0 auto 1.2rem auto;
+}
+
+.story-header-divider {
+  width: 120px;
+  height: 12px;
+  margin-top: 0.5rem;
+}
+
+.story-divider-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* 4-Stage Horizontal Layout */
+.story-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.8rem;
+  width: 100%;
+  position: relative;
+}
+
+.story-stage-card {
+  position: relative;
+  background: rgba(255, 253, 248, 0.7);
+  border: 1px solid rgba(201, 151, 59, 0.25);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(74, 37, 17, 0.04);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.story-stage-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(185, 70, 48, 0.12);
+  border-color: rgba(185, 70, 48, 0.4);
+}
+
+/* Stage Header & Badge */
+.story-stage-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.2rem;
+}
+
+.story-num-badge {
+  background: #b94630;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(185, 70, 48, 0.3);
+}
+
+.story-stage-title {
+  font-family: var(--font-heading, serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4a2511;
+  text-transform: uppercase;
+}
+
+/* Illustration Container */
+.story-stage-img-wrap {
+  width: 100%;
+  height: 180px;
+  margin-bottom: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #fdfaf3;
+  border: 1px dashed rgba(201, 151, 59, 0.3);
+}
+
+.story-stage-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: transform 0.4s ease;
+}
+
+.story-stage-card:hover .story-stage-img {
+  transform: scale(1.05);
+}
+
+/* Description */
+.story-stage-desc {
+  font-size: 0.92rem;
+  color: #5c351f;
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  min-height: 3.2em;
+}
+
+/* Underline Flourish */
+.story-stage-flourish {
+  width: 40px;
+  height: 8px;
+  margin-top: auto;
+}
+
+.flourish-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Connector Arrow for Desktop */
+.story-connector-arrow {
+  position: absolute;
+  right: -1.3rem;
+  top: 45%;
+  transform: translateY(-50%);
+  width: 42px;
+  height: 16px;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.arrow-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Bottom Decorative Border Pattern */
+.story-bottom-pattern {
+  width: 100%;
+  height: 24px;
+  margin-top: 4rem;
+  opacity: 0.7;
+}
+
+.pattern-svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .story-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .story-connector-arrow {
+    display: none;
+  }
+
+  .story-scenery-left,
+  .story-scenery-right {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .story-section {
+    padding: 3.5rem 1rem 3rem 1rem;
+  }
+
+  .story-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+
+  .story-stage-img-wrap {
+    height: 200px;
+  }
+}

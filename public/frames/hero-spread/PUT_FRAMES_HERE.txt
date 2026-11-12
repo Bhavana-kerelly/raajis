@@ -1,0 +1,5 @@
+Put your hero spotlight-sweep frames here, exactly as ezgif named them:
+ezgif-frame-001.jpg, ezgif-frame-002.jpg, ezgif-frame-003.jpg ...
+
+Then open src/components/Hero.jsx and set:
+  const SPREAD_FRAME_COUNT = <your actual frame count>
