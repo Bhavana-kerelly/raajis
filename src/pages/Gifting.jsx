@@ -335,6 +335,27 @@ const HOW_IT_WORKS_PROCESS = [
   },
 ]
 
+const TRUSTED_BRANDS_ROW_1 = [
+  { id: 'brand-1', name: 'Brand 1', img: '/gifting/brands/brand-1.png', fallback: 'Microsoft' },
+  { id: 'brand-2', name: 'Brand 2', img: '/gifting/brands/brand-2.png', fallback: 'Goldman Sachs' },
+  { id: 'brand-3', name: 'Brand 3', img: '/gifting/brands/brand-3.png', fallback: 'Amazon' },
+  { id: 'brand-4', name: 'Brand 4', img: '/gifting/brands/brand-4.png', fallback: 'SAP' },
+  { id: 'brand-5', name: 'Brand 5', img: '/gifting/brands/brand-5.png', fallback: 'Shell' },
+  { id: 'brand-6', name: 'Brand 6', img: '/gifting/brands/brand-6.png', fallback: 'Wipro' },
+  { id: 'brand-7', name: 'Brand 7', img: '/gifting/brands/brand-7.png', fallback: 'Infosys' },
+  { id: 'brand-8', name: 'Brand 8', img: '/gifting/brands/brand-8.png', fallback: 'Deloitte' },
+]
+
+const TRUSTED_BRANDS_ROW_2 = [
+  { id: 'brand-9', name: 'Brand 9', img: '/gifting/brands/brand-9.png', fallback: 'Tata' },
+  { id: 'brand-10', name: 'Brand 10', img: '/gifting/brands/brand-10.png', fallback: 'Cognizant' },
+  { id: 'brand-11', name: 'Brand 11', img: '/gifting/brands/brand-11.png', fallback: 'Capgemini' },
+  { id: 'brand-12', name: 'Brand 12', img: '/gifting/brands/brand-12.png', fallback: 'Google' },
+  { id: 'brand-13', name: 'Brand 13', img: '/gifting/brands/brand-13.png', fallback: 'Accenture' },
+  { id: 'brand-14', name: 'Brand 14', img: '/gifting/brands/brand-14.png', fallback: 'Oracle' },
+  { id: 'brand-15', name: 'Brand 15', img: '/gifting/brands/brand-15.png', fallback: 'HCL Tech' },
+]
+
 const FAQS = [
   {
     q: '1. What is the minimum order quantity (MOQ) for corporate orders?',
@@ -770,52 +791,84 @@ export default function Gifting() {
       </section>
 
       {/* ====================================================================
-          SECTION 9 — TRUSTED BY LEADING BRANDS
+          SECTION 9 — TRUSTED BY LEADING BRANDS (2-ROW CONTINUOUS SCROLLING)
           ==================================================================== */}
       <section className="gifting-trusted-section">
         <div className="gifting-container">
           <div className="trusted-brands-strip-box">
             <h4 className="trusted-leading-eyebrow">TRUSTED BY LEADING BRANDS</h4>
 
-            <div className="trusted-brands-row">
-              {/* 1. Microsoft */}
-              <div className="brand-item brand-microsoft" title="Microsoft">
-                <svg width="22" height="22" viewBox="0 0 23 23" fill="none">
-                  <rect x="0" y="0" width="10.5" height="10.5" fill="#F25022" />
-                  <rect x="12.5" y="0" width="10.5" height="10.5" fill="#7FBA00" />
-                  <rect x="0" y="12.5" width="10.5" height="10.5" fill="#00A4EF" />
-                  <rect x="12.5" y="12.5" width="10.5" height="10.5" fill="#FFB900" />
-                </svg>
-                <span className="brand-text-microsoft">Microsoft</span>
+            <div className="trusted-marquee-container">
+              {/* Row 1: Brands 1 to 8 — Continuously scrolling from left to right */}
+              <div className="brands-marquee-row">
+                <div className="brands-marquee-track brands-track-ltr">
+                  {[...TRUSTED_BRANDS_ROW_1, ...TRUSTED_BRANDS_ROW_1, ...TRUSTED_BRANDS_ROW_1].map((brand, idx) => (
+                    <div key={`r1-${brand.id}-${idx}`} className="brand-item-card" title={brand.name}>
+                      <img
+                        src={brand.img}
+                        alt={brand.name}
+                        className="brand-logo-img"
+                        style={{ display: 'none' }}
+                        onLoad={(e) => {
+                          e.currentTarget.style.display = 'block'
+                          const fb = e.currentTarget.parentElement.querySelector('.brand-fallback-content')
+                          if (fb) fb.style.display = 'none'
+                        }}
+                        onError={(e) => {
+                          const src = e.currentTarget.src
+                          if (src.includes('.png')) {
+                            e.currentTarget.src = src.replace('.png', '.svg')
+                          } else if (src.includes('.svg')) {
+                            e.currentTarget.src = src.replace('.svg', '.jpg')
+                          } else {
+                            e.currentTarget.style.display = 'none'
+                            const fb = e.currentTarget.parentElement.querySelector('.brand-fallback-content')
+                            if (fb) fb.style.display = 'inline-flex'
+                          }
+                        }}
+                      />
+                      <span className="brand-fallback-content">
+                        <span className="brand-fallback-text">{brand.fallback}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
 
-              {/* 2. Goldman Sachs */}
-              <div className="brand-item brand-goldman" title="Goldman Sachs">
-                <span className="brand-text-goldman">Goldman Sachs</span>
-              </div>
-
-              {/* 3. Amazon */}
-              <div className="brand-item brand-amazon" title="Amazon">
-                <span className="brand-text-amazon">amazon</span>
-                <svg width="76" height="13" viewBox="0 0 76 13" fill="none" className="amazon-smile-svg">
-                  <path d="M6 3 C26 12 50 11 66 4" stroke="#777777" strokeWidth="2.4" strokeLinecap="round" />
-                  <path d="M62 2 L68 4 L65.5 8.5" fill="#777777" />
-                </svg>
-              </div>
-
-              {/* 4. SAP */}
-              <div className="brand-item brand-sap" title="SAP">
-                <span className="brand-text-sap">SAP</span>
-              </div>
-
-              {/* 5. Shell */}
-              <div className="brand-item brand-shell" title="Shell">
-                <span className="brand-text-shell">Shell</span>
-              </div>
-
-              {/* 6. WIPRO */}
-              <div className="brand-item brand-wipro" title="WIPRO">
-                <span className="brand-text-wipro">WIPRO</span>
+              {/* Row 2: Brands 9 to 15 — Continuously scrolling from left to right */}
+              <div className="brands-marquee-row">
+                <div className="brands-marquee-track brands-track-ltr brands-track-offset">
+                  {[...TRUSTED_BRANDS_ROW_2, ...TRUSTED_BRANDS_ROW_2, ...TRUSTED_BRANDS_ROW_2].map((brand, idx) => (
+                    <div key={`r2-${brand.id}-${idx}`} className="brand-item-card" title={brand.name}>
+                      <img
+                        src={brand.img}
+                        alt={brand.name}
+                        className="brand-logo-img"
+                        style={{ display: 'none' }}
+                        onLoad={(e) => {
+                          e.currentTarget.style.display = 'block'
+                          const fb = e.currentTarget.parentElement.querySelector('.brand-fallback-content')
+                          if (fb) fb.style.display = 'none'
+                        }}
+                        onError={(e) => {
+                          const src = e.currentTarget.src
+                          if (src.includes('.png')) {
+                            e.currentTarget.src = src.replace('.png', '.svg')
+                          } else if (src.includes('.svg')) {
+                            e.currentTarget.src = src.replace('.svg', '.jpg')
+                          } else {
+                            e.currentTarget.style.display = 'none'
+                            const fb = e.currentTarget.parentElement.querySelector('.brand-fallback-content')
+                            if (fb) fb.style.display = 'inline-flex'
+                          }
+                        }}
+                      />
+                      <span className="brand-fallback-content">
+                        <span className="brand-fallback-text">{brand.fallback}</span>
+                      </span>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>

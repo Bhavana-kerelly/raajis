@@ -1411,9 +1411,12 @@
 
 .trusted-brands-strip-box {
   background: #EFF1F3;
-  border-radius: 12px;
-  padding: 2.25rem 3.5rem 2.5rem;
+  border-radius: 16px;
+  padding: 2.25rem 1.25rem 2.25rem;
   text-align: center;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(56, 37, 30, 0.03);
 }
 
 .trusted-leading-eyebrow {
@@ -1423,132 +1426,136 @@
   color: #64748B;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  margin: 0 0 2rem;
+  margin: 0 0 1.85rem;
   line-height: 1;
 }
 
-.trusted-brands-row {
+/* Two-row wrapper with luxury gradient edge masks */
+.trusted-marquee-container {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2rem;
-  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 1.5rem;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 6%, black 94%, transparent 100%);
 }
 
-.brand-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.82;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+.brands-marquee-row {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
   user-select: none;
 }
 
-.brand-item:hover {
-  opacity: 1;
-  transform: translateY(-2px);
-}
-
-/* 1. Microsoft */
-.brand-microsoft {
-  gap: 0.55rem;
-}
-
-.brand-text-microsoft {
-  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #737373;
-  letter-spacing: -0.015em;
-}
-
-/* 2. Goldman Sachs */
-.brand-text-goldman {
-  font-family: 'Times New Roman', Times, Georgia, serif;
-  font-size: 1.32rem;
-  font-weight: 700;
-  color: #737373;
-  letter-spacing: -0.02em;
-}
-
-/* 3. Amazon */
-.brand-amazon {
-  position: relative;
-  display: inline-flex;
-  flex-direction: column;
+.brands-marquee-track {
+  display: flex;
   align-items: center;
-  padding-bottom: 2px;
+  gap: 1.6rem;
+  width: max-content;
+  will-change: transform;
 }
 
-.brand-text-amazon {
-  font-family: 'Inter', -apple-system, sans-serif;
-  font-size: 1.4rem;
+/* Continuous scrolling from left to right */
+.brands-track-ltr {
+  animation: scrollLeftToRight 36s linear infinite;
+}
+
+.brands-track-offset {
+  animation-duration: 40s;
+}
+
+.brands-marquee-row:hover .brands-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scrollLeftToRight {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+/* Individual Brand Logo Card — Extra Large & Colorful */
+.brand-item-card {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  height: 110px;
+  padding: 1rem 2.5rem;
+  background: #FFFFFF;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 18px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+  transition: all 0.25s ease;
+  flex-shrink: 0;
+}
+
+.brand-item-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201, 154, 82, 0.65);
+  box-shadow: 0 10px 26px rgba(121, 13, 37, 0.12);
+}
+
+.brand-logo-img {
+  height: 75px;
+  max-height: 80px;
+  max-width: 220px;
+  width: auto;
+  object-fit: contain;
+  /* Original vibrant brand colors — no black/grayscale */
+  filter: none !important;
+  opacity: 1;
+  transition: transform 0.25s ease;
+  display: block;
+}
+
+.brand-item-card:hover .brand-logo-img {
+  transform: scale(1.06);
+}
+
+.brand-fallback-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-fallback-text {
+  font-family: var(--font-body, 'Inter', sans-serif);
+  font-size: 1.5rem;
   font-weight: 800;
-  color: #737373;
-  letter-spacing: -0.04em;
-  line-height: 1;
-}
-
-.amazon-smile-svg {
-  margin-top: -3px;
-}
-
-/* 4. SAP */
-.brand-text-sap {
-  font-family: 'Arial Black', -apple-system, sans-serif;
-  font-size: 1.42rem;
-  font-weight: 900;
-  color: #737373;
-  letter-spacing: 0.04em;
-}
-
-/* 5. Shell */
-.brand-text-shell {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.35rem;
-  font-weight: 700;
-  color: #737373;
+  color: #334155;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
-/* 6. WIPRO */
-.brand-text-wipro {
-  font-family: 'Inter', sans-serif;
-  font-size: 1.32rem;
-  font-weight: 800;
-  color: #737373;
-  letter-spacing: 0.12em;
-}
-
-@media (max-width: 992px) {
+@media (max-width: 768px) {
   .trusted-brands-strip-box {
-    padding: 2rem 1.5rem;
+    padding: 1.85rem 0.75rem;
   }
-  .trusted-brands-row {
-    justify-content: center;
-    gap: 2rem 3rem;
+  .brand-item-card {
+    min-width: 200px;
+    height: 86px;
+    padding: 0.8rem 1.6rem;
+    border-radius: 14px;
   }
-}
-
-@media (max-width: 640px) {
-  .trusted-leading-eyebrow {
-    font-size: 0.76rem;
-    letter-spacing: 0.14em;
-    margin-bottom: 1.5rem;
+  .brand-logo-img {
+    height: 56px;
+    max-height: 58px;
+    max-width: 170px;
   }
-  .trusted-brands-row {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem 1rem;
-    justify-items: center;
+  .brand-fallback-text {
+    font-size: 1.2rem;
   }
-  .brand-text-microsoft,
-  .brand-text-goldman,
-  .brand-text-amazon,
-  .brand-text-sap,
-  .brand-text-shell,
-  .brand-text-wipro {
-    font-size: 1.15rem;
+  .brands-track-ltr {
+    animation-duration: 28s;
+  }
+  .brands-track-offset {
+    animation-duration: 32s;
   }
 }
 
